@@ -33,4 +33,12 @@ function addLinha(){
 
         linhas += linha;
     }
+
+    inputContato.value = '';
+    inputNumero.value = '';
+}
+
+function refreshTable(){
+    const corpoTabela = document.querySelector('tbody');
+    corpoTabela.innerHTML = linhas;
 }
