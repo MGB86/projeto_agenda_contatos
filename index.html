@@ -16,8 +16,8 @@
             <h1>Agenda Contatos</h1>
         </header>
         <form id="form-contato">
-            <input type="text" required placeholder="Nome"/>
-            <input type="number" required placeholder="Nº Telefone">
+            <input type="text" id="nome-contato" required placeholder="Nome"/>
+            <input type="number" id="numero-contato" required placeholder="Nº Telefone">
             <button type="submit">Adicionar +</button>
         </form>
         <table cellspacing="0">
@@ -29,16 +29,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th id="img-contato"><img src="/imgs/profile-user_64572.png" alt="foto de perfil"></th>
-                    <th>Miguel</th>
-                    <th>(55)99999-9999</th>
-                </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Total de contatos</th>
-                    <th id="soma-contatos"></th>
+                    <td>Total de contatos</td>
+                    <td id="soma-contatos"></td>
                 </tr>
             </tfoot>
         </table>
