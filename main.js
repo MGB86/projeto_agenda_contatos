@@ -10,7 +10,7 @@ form.addEventListener('submit', function(e){
 
     addLinha();
     refreshTable();
-    totalContatos();
+    refreshSoma();
 })
 
 function addLinha(){
@@ -41,4 +41,20 @@ function addLinha(){
 function refreshTable(){
     const corpoTabela = document.querySelector('tbody');
     corpoTabela.innerHTML = linhas;
+}
+
+function refreshSoma(){
+    const somaTotal = somaFinal();
+
+    document.getElementById('soma-contatos').innerHTML = somaTotal; 
+}
+
+function somaFinal(){
+    let somaContatos = 0;
+
+    for (i = 0; i < contatos.length; i++){
+        somaContatos += contatos[i];
+    }
+
+    return contatos.length;
 }
