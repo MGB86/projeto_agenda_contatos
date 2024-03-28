@@ -17,7 +17,7 @@
         </header>
         <form id="form-contato">
             <input type="text" id="nome-contato" required placeholder="Nome"/>
-            <input type="number" id="numero-contato" required placeholder="Nº Telefone">
+            <input type="tel" id="numero-contato" maxlength="15" onkeyup="handlePhone(event)" required placeholder="Nº Telefone">
             <button type="submit">Adicionar +</button>
         </form>
         <table cellspacing="0">
@@ -33,7 +33,7 @@
             <tfoot>
                 <tr>
                     <td>Total de contatos</td>
-                    <td id="soma-contatos"></td>
+                    <td id="soma-contatos">---</td>
                 </tr>
             </tfoot>
         </table>

@@ -2,8 +2,25 @@ const form = document.getElementById('form-contato');
 const contatos = [];
 const numeros = [];
 const imgContato = '<img src="./imgs/profile-user_64572.png" alt="foto do contato" />'
+const inputContato = document.getElementById('nome-contato');
+const inputNumero = document.getElementById('numero-contato');
 
 let linhas = '';
+let numeroAjustado = '';
+
+const handlePhone = (event) => {
+    let inputNumero = event.target
+    inputNumero.value = phoneMask(inputNumero.value)
+}
+
+const phoneMask = (value) => {
+    if(!value) return ""
+    value = value.replace(/\D/g,'');
+    value = value.replace(/(\d{2})(\d)/,"($1) $2");
+    value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+
+    return value
+}
 
 form.addEventListener('submit', function(e){ 
     e.preventDefault();
@@ -14,9 +31,6 @@ form.addEventListener('submit', function(e){
 })
 
 function addLinha(){
-    const inputContato = document.getElementById('nome-contato');
-    const inputNumero = document.getElementById('numero-contato');
-
     if (contatos.includes(inputContato.value)) {
         alert(`Esse contato já existe. Verifique e tente novamente!`)
     } else if (numeros.includes(inputNumero.value)) {
