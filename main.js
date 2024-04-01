@@ -57,18 +57,4 @@ function refreshTable(){
     corpoTabela.innerHTML = linhas;
 }
 
-function refreshSoma(){
-    const somaTotal = somaFinal();
 
-    document.getElementById('soma-contatos').innerHTML = somaTotal; 
-}
-
-function somaFinal(){
-    let somaContatos = 0;
-
-    for (i = 0; i < contatos.length; i++){
-        somaContatos += contatos[i];
-    }
-
-    return contatos.length;
-}
